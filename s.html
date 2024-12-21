@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srecna Nova Godina</title>
+    <link rel="stylesheet" href="stilovi.css">
+    <style>
+        body {
+            background-color: #212121;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        #text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+        <div id="text">
+            <div class="fade-in">Šta to stalno izvlači iz sećanja</div>
+            <div class="fade-in">zlatom obojen dan</div>
+            <div class="fade-in">kada smo se prvi put poljubili</div>
+            <div class="fade-in">ti i ja</div>
+        </div>
+        <div class="password">
+            <!-- Input element will go here -->
+            <input maxlength="1" value="5" class="input" name="text" type="text" />
+            <input maxlength="1" value="7" class="input" name="text" type="text" />
+            <input maxlength="1" value="1" class="input" name="text" type="text" />
+            <input maxlength="1" value="6" class="input" name="text" type="text" />
+            <input maxlength="1" value="3" class="input" name="text" type="text" />
+            <input maxlength="1" value="2" class="input" name="text" type="text" />
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const lines = document.querySelectorAll('#text .fade-in');
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.classList.add('visible');
+                }, index * 2000); // Delay each line by 2 seconds
+            });
+        };
+    </script>
+    <script src="s.js"></script>
+</body>
+</html>
