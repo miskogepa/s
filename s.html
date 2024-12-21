@@ -50,6 +50,9 @@
             padding: 20px;
             text-align: left;
         }
+        .flip-card-inner.flipped {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +108,12 @@
 
         document.querySelector('.inputporuka').addEventListener('input', function() {
             document.querySelector('.flip-card-back .content').textContent = this.value;
+        });
+
+        document.querySelector('.flip-card').addEventListener('mouseenter', function() {
+            if (!this.querySelector('.flip-card-inner').classList.contains('flipped')) {
+                this.querySelector('.flip-card-inner').style.transform = 'rotateY(180deg)';
+            }
         });
     </script>
     <script src="s.js"></script>

@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const inputs = document.querySelectorAll('.password input');
     const correctPassword = '300824';
     const inputPoruka = document.querySelector('.inputporuka');
+    const flipCardInner = document.querySelector('.flip-card-inner');
     const flipCardBackContent = document.querySelector('.flip-card-back p.content');
+    let isFlipped = false;
 
     inputs.forEach((input, index) => {
         input.addEventListener('input', () => {
@@ -24,6 +26,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     inputPoruka.addEventListener('input', () => {
         flipCardBackContent.textContent = inputPoruka.value;
+    });
+
+    flipCardInner.addEventListener('transitionend', () => {
+        if (flipCardInner.style.transform === 'rotateY(180deg)') {
+            isFlipped = true;
+            flipCardInner.classList.add('flipped');
+        }
+    });
+
+    document.querySelector('.flip-card').addEventListener('mouseenter', function() {
+        if (!isFlipped) {
+            flipCardInner.style.transform = 'rotateY(180deg)';
+        }
     });
 
     function checkPassword() {
