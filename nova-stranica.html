@@ -49,9 +49,55 @@
         button:hover:before {
             transform: translateX(15em);
         }
+        .quiz-option {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .quiz-option.correct {
+            background-color: green;
+        }
+        .quiz-option.incorrect {
+            background-color: red;
+        }
     </style>
 </head>
 <body>
-    <p>test</p>
+    <div id="quiz-container"></div>
+    <script>
+        const questions = [
+            { question: "Како се зове место на ком смо се први пут пољубили?", correctAnswer: "Плажа", options: ["Парк", "Кафе", "Плажа", "Биоскоп"] },
+            { question: "Како се зове место на ком смо се први пут пољубили?", correctAnswer: "Плажа", options: ["Парк", "Кафе", "Плажа", "Биоскоп"] },
+        ];
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            questions.forEach((q, index) => {
+                const questionElement = document.createElement('p');
+                questionElement.textContent = q.question;
+                quizContainer.appendChild(questionElement);
+
+                q.options.forEach(option => {
+                    const optionElement = document.createElement('div');
+                    optionElement.classList.add('quiz-option');
+                    optionElement.textContent = option;
+                    optionElement.dataset.answer = option === q.correctAnswer ? 'correct' : 'incorrect';
+                    optionElement.addEventListener('click', function() {
+                        if (this.dataset.answer === 'correct') {
+                            this.classList.add('correct');
+                        } else {
+                            this.classList.add('incorrect');
+                        }
+                    });
+                    quizContainer.appendChild(optionElement);
+                });
+            });
+        }
+
+        loadQuiz();
+    </script>
 </body>
 </html>
