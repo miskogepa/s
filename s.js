@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const flipCard = document.querySelector('.flip-card');
     let isFlipped = false;
 
+    // Initial text
+    flipCardBackContent.textContent = "Zelim da u novoj godini budemo bolji nego u prethodnoj!";
+
     inputs.forEach((input, index) => {
         input.addEventListener('input', () => {
             if (input.value.length === input.maxLength) {
@@ -26,9 +29,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     inputPoruka.addEventListener('input', (e) => {
-        flipCardBackContent.textContent = e.target.value;
+        const value = e.target.value;
+        flipCardBackContent.textContent = "Zelim da u novoj godini budemo bolji nego u prethodnoj! " + value;
         flipCardBackContent.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
         adjustCardHeight();
+        adjustInputHeight();
     });
 
     flipCardInner.addEventListener('transitionend', () => {
@@ -47,6 +52,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function adjustCardHeight() {
         flipCard.style.height = flipCardBackContent.scrollHeight + 'px';
         document.body.style.height = flipCardBackContent.scrollHeight + 100 + 'px'; // Adjust page height
+    }
+
+    function adjustInputHeight() {
+        inputPoruka.style.height = 'auto'; // Reset height
+        inputPoruka.style.height = inputPoruka.scrollHeight + 'px'; // Set new height
     }
 
     function checkPassword() {

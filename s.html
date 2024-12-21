@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="text" class="inputporuka" placeholder="Napiši poruku" style="color: white;" />
+        <textarea name="text" class="inputporuka" placeholder="Napiši poruku" style="color: white;"></textarea>
 
         <button> POŠALJI
         </button>
@@ -115,6 +115,8 @@
             content.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
             document.querySelector('.flip-card').style.height = content.scrollHeight + 'px'; // Adjust card height
             document.body.style.height = content.scrollHeight + 100 + 'px'; // Adjust page height
+            e.target.style.height = 'auto'; // Reset height
+            e.target.style.height = e.target.scrollHeight + 'px'; // Set new height
         });
 
         document.querySelector('.flip-card').addEventListener('mouseenter', function() {
