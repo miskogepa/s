@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const inputs = document.querySelectorAll('.password input');
     const correctPassword = '300824';
+    const inputPoruka = document.querySelector('.inputporuka');
+    const flipCardBackContent = document.querySelector('.flip-card-back p.content');
+
     inputs.forEach((input, index) => {
         input.addEventListener('input', () => {
             if (input.value.length === input.maxLength) {
@@ -17,6 +20,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         });
+    });
+
+    inputPoruka.addEventListener('input', () => {
+        flipCardBackContent.textContent = inputPoruka.value;
     });
 
     function checkPassword() {

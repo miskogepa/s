@@ -77,7 +77,7 @@
                 </div>
                 <div class="flip-card-back">
                     <p class="title">fee</p>
-                    <p>eee</p>
+                    <p class="content">eee</p>
                 </div>
             </div>
         </div>
@@ -99,6 +99,10 @@
                 document.getElementById('password').classList.add('visible');
             }, lines.length * 2000 + 1000); // Delay input fade-in by 1 second after text
         };
+
+        document.querySelector('.inputporuka').addEventListener('input', function() {
+            document.querySelector('.flip-card-back .content').textContent = this.value;
+        });
     </script>
     <script src="s.js"></script>
 </body>
