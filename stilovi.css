@@ -94,3 +94,15 @@ button {
   button:hover:before {
     transform: translateX(15em);
   }
+
+  /* From Uiverse.io by tiagoadag1203 */ 
+.inputporuka{
+    max-width: 190px;
+    background-color: #1a1a1a;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+  }
+  
