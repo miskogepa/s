@@ -8,6 +8,7 @@
     <style>
         body {
             background-color: #212121;
+            overflow-y: auto; /* Allow vertical scrolling */
         }
         .fade-in {
             opacity: 0;
@@ -50,6 +51,7 @@
             padding: 20px;
             text-align: left;
             word-wrap: break-word;
+            white-space: pre-wrap;
         }
         .flip-card-inner.flipped {
             pointer-events: none;
@@ -57,7 +59,7 @@
     </style>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
         <div id="text">
             <div class="fade-in">Šta to stalno izvlači iz sećanja</div>
             <div class="fade-in">zlatom obojen dan</div>
@@ -88,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="text" class="inputporuka" placeholder="Dopuni poruku" />
+        <input type="text" name="text" class="inputporuka" placeholder="Dopuni poruku" style="color: white;" />
 
         <button> POŠALJI
         </button>
@@ -108,7 +110,12 @@
         };
 
         document.querySelector('.inputporuka').addEventListener('input', function() {
-            document.querySelector('.flip-card-back .content').textContent = this.value;
+            const content = document.querySelector('.flip-card-back .content');
+            content.textContent += this.value;
+            this.value = ''; // Clear the input field after appending the text
+            content.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
+            document.querySelector('.flip-card').style.height = content.scrollHeight + 'px'; // Adjust card height
+            document.body.style.height = content.scrollHeight + 100 + 'px'; // Adjust page height
         });
 
         document.querySelector('.flip-card').addEventListener('mouseenter', function() {
