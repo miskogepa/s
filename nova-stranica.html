@@ -63,6 +63,10 @@
         .quiz-option.incorrect {
             background-color: red;
         }
+        .quiz-option.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +74,7 @@
     <script>
         const questions = [
             { question: "Kako se zove mesto na kom smo se prvi put poljubili?", correctAnswer: "Avala", options: ["Avala", "Sava mala", "Limeni", "Bioskop"] },
-            { question: "Kako se zove park u kome smo najvise proveli vremena?", correctAnswer: "Hajd park", options: ["Savski kej", "Beograd na vodi", "Avala", "Hajd park"] },
+            { question: "Kako se zove mesto na kome smo najvise proveli vremena?", correctAnswer: "Hajd park", options: ["Savski kej", "Beograd na vodi", "Avala", "Hajd park"] },
         ];
 
         function loadQuiz() {
@@ -79,6 +83,10 @@
                 const questionElement = document.createElement('p');
                 questionElement.textContent = q.question;
                 quizContainer.appendChild(questionElement);
+
+                const optionsContainer = document.createElement('div');
+                optionsContainer.classList.add('options-container');
+                quizContainer.appendChild(optionsContainer);
 
                 q.options.forEach(option => {
                     const optionElement = document.createElement('div');
@@ -91,8 +99,11 @@
                         } else {
                             this.classList.add('incorrect');
                         }
+                        // Disable all options for this question
+                        const options = optionsContainer.querySelectorAll('.quiz-option');
+                        options.forEach(opt => opt.classList.add('disabled'));
                     });
-                    quizContainer.appendChild(optionElement);
+                    optionsContainer.appendChild(optionElement);
                 });
             });
         }
