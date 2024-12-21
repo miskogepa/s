@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const flipCardInner = document.querySelector('.flip-card-inner');
     const flipCardBackContent = document.querySelector('.flip-card-back p.content');
     const flipCard = document.querySelector('.flip-card');
+    const submitButton = document.querySelector('button');
     let isFlipped = false;
 
     // Initial text
@@ -47,6 +48,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (!isFlipped) {
             flipCardInner.style.transform = 'rotateY(180deg)';
         }
+    });
+
+    submitButton.addEventListener('click', () => {
+        document.querySelector('body').innerHTML = '<img src="p.jpg" alt="Image" style="width: 100%; height: 100%;">';
     });
 
     function adjustCardHeight() {

@@ -86,7 +86,7 @@
                     <p>Klkni me</p>
                 </div>
                 <div class="flip-card-back">
-                    <p class="content"></p>
+                    <p class="content">Zelim da u novoj godini budemo bolji nego u prethodnoj!</p>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
 
         document.querySelector('.inputporuka').addEventListener('input', function(e) {
             const content = document.querySelector('.flip-card-back .content');
-            content.textContent = e.target.value;
+            content.textContent = "Zelim da u novoj godini budemo bolji nego u prethodnoj! " + e.target.value;
             content.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
             document.querySelector('.flip-card').style.height = content.scrollHeight + 'px'; // Adjust card height
             document.body.style.height = content.scrollHeight + 100 + 'px'; // Adjust page height
@@ -123,6 +123,10 @@
             if (!this.querySelector('.flip-card-inner').classList.contains('flipped')) {
                 this.querySelector('.flip-card-inner').style.transform = 'rotateY(180deg)';
             }
+        });
+
+        document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('body').innerHTML = '<img src="p.jpg" alt="Image" style="width: 100%; height: 100%;">';
         });
     </script>
     <script src="s.js"></script>
