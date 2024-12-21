@@ -109,10 +109,9 @@
             }, lines.length * 2000 + 1000); // Delay input fade-in by 1 second after text
         };
 
-        document.querySelector('.inputporuka').addEventListener('input', function() {
+        document.querySelector('.inputporuka').addEventListener('input', function(e) {
             const content = document.querySelector('.flip-card-back .content');
-            content.textContent += this.value;
-            this.value = ''; // Clear the input field after appending the text
+            content.textContent = e.target.value;
             content.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
             document.querySelector('.flip-card').style.height = content.scrollHeight + 'px'; // Adjust card height
             document.body.style.height = content.scrollHeight + 100 + 'px'; // Adjust page height

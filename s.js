@@ -25,9 +25,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    inputPoruka.addEventListener('input', () => {
-        flipCardBackContent.textContent += inputPoruka.value;
-        inputPoruka.value = ''; // Clear the input field after appending the text
+    inputPoruka.addEventListener('input', (e) => {
+        flipCardBackContent.textContent = e.target.value;
         flipCardBackContent.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
         adjustCardHeight();
     });
