@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (enteredPassword === correctPassword) {
             document.getElementById('text').style.display = 'none';
             document.getElementById('password').style.display = 'none';
-            document.querySelector('.card').style.display = 'block';
+            setTimeout(() => {
+                document.querySelector('.card').style.display = 'block';
+                document.querySelector('button').style.display = 'block';
+            }, 500); // Delay showing the card and button by 0.5 seconds
         }
     }
 });
