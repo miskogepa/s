@@ -107,6 +107,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <p>Deda Mraz je procitao vase pismo i spremio je neka pitanja.</p>
                 <img src="p.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
                 <button id="start-test">ZAPOČNI TEST</button>
+                <div id="quiz-container" style="margin-top: 20px; font-size: 24px;">Kviz</div>
+                <script>
+                    document.getElementById('start-test').addEventListener('click', function() {
+                        window.location.href = 'nova-stranica.html';
+                    });
+                </script>
             </body>
             </html>
         `);

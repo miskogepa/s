@@ -86,8 +86,8 @@
 button {
     margin-top: 20px;
     --green: #1BFD9C;
-    font-size: 15px;
-    padding: 0.7em 2.7em;
+    font-size: 20px; /* Increased font size */
+    padding: 1em 3em; /* Increased padding */
     letter-spacing: 0.06em;
     position: relative;
     font-family: inherit;
