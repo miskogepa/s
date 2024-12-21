@@ -26,7 +26,7 @@
         .password.visible {
             opacity: 1;
         }
-        .card, button, #test-text, .inputporuka {
+        .flip-card, button, #test-text, .inputporuka {
             display: none;
         }
         .card-content {
@@ -68,10 +68,17 @@
         <div id="test-text" style="color: rgba(255, 215, 0, 0.7); font-size: 20px; margin-bottom: 20px;">
            Pismo Deda Mrazu
         </div>
-        <div class="card">
-            <div class="card-content">
-              
-               
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p class="title">haj</p>
+                    <p>Hover Me</p>
+                </div>
+                <div class="flip-card-back">
+                    <p class="title">fee</p>
+                    <p>eee</p>
+                </div>
             </div>
         </div>
         <input type="text" name="text" class="inputporuka" placeholder="Dopuni poruku" />

@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('password').style.display = 'none';
             setTimeout(() => {
                 document.getElementById('test-text').style.display = 'block';
-                document.querySelector('.card').style.display = 'block';
+                document.querySelector('.flip-card').style.display = 'block';
                 document.querySelector('button').style.display = 'block';
                 document.querySelector('.inputporuka').style.display = 'block';
-            }, 500); // Delay showing the test-text, card, button, and input by 0.5 seconds
+            }, 500); // Delay showing the test-text, flip-card, button, and input by 0.5 seconds
         }
     }
 });
