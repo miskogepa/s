@@ -19,6 +19,13 @@
         #text {
             text-align: center;
         }
+        .password {
+            opacity: 0;
+            transition: opacity 2s;
+        }
+        .password.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -29,14 +36,14 @@
             <div class="fade-in">kada smo se prvi put poljubili</div>
             <div class="fade-in">ti i ja</div>
         </div>
-        <div class="password">
+        <div id="password" class="password">
             <!-- Input element will go here -->
-            <input maxlength="1" value="5" class="input" name="text" type="text" />
-            <input maxlength="1" value="7" class="input" name="text" type="text" />
-            <input maxlength="1" value="1" class="input" name="text" type="text" />
-            <input maxlength="1" value="6" class="input" name="text" type="text" />
-            <input maxlength="1" value="3" class="input" name="text" type="text" />
-            <input maxlength="1" value="2" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
+            <input maxlength="1" value="" class="input" name="text" type="text" />
         </div>
     </div>
 
@@ -48,6 +55,9 @@
                     line.classList.add('visible');
                 }, index * 2000); // Delay each line by 2 seconds
             });
+            setTimeout(() => {
+                document.getElementById('password').classList.add('visible');
+            }, lines.length * 2000 + 1000); // Delay input fade-in by 1 second after text
         };
     </script>
     <script src="s.js"></script>
