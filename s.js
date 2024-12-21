@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     inputPoruka.addEventListener('input', () => {
         flipCardBackContent.textContent = inputPoruka.value;
+        flipCardBackContent.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
     });
 
     flipCardInner.addEventListener('transitionend', () => {
