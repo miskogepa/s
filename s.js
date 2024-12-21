@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 document.getElementById('test-text').style.display = 'block';
                 document.querySelector('.card').style.display = 'block';
                 document.querySelector('button').style.display = 'block';
-            }, 500); // Delay showing the test-text, card, and button by 0.5 seconds
+                document.querySelector('.inputporuka').style.display = 'block';
+            }, 500); // Delay showing the test-text, card, button, and input by 0.5 seconds
         }
     }
 });

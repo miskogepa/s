@@ -26,8 +26,24 @@
         .password.visible {
             opacity: 1;
         }
-        .card, button, #test-text {
+        .card, button, #test-text, .inputporuka {
             display: none;
+        }
+        .card-content {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .card textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            resize: none;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
@@ -52,12 +68,15 @@
         <div id="test-text" style="color: rgba(255, 215, 0, 0.7); font-size: 20px; margin-bottom: 20px;">
            Pismo Deda Mrazu
         </div>
-        <div class="card"></div>
-       
-<input type="text" name="text" class="inputporuka" placeholder="type it" />
+        <div class="card">
+            <div class="card-content">
+              
+               
+            </div>
+        </div>
+        <input type="text" name="text" class="inputporuka" placeholder="type it" />
 
-
-        <button> I'M READY
+        <button> POŠALJI
         </button>
     </div>
 
