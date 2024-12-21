@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let isFlipped = false;
 
     // Initial text
-    flipCardBackContent.textContent = "Zelim da u novoj godini budemo bolji nego u prethodnoj!";
+    flipCardBackContent.textContent = "Ono sto sam pozeleo u prosloj novoj godini to mi se ostvarilo.Našao sam nekog do koga mi je previse stalo, nekog koga sam mnogo zavoleo, osobu koja zeli da provodi svaki moguci trenutak u mom zivotu i da delimo sve nase uspehe i padove, srecu i tugu. Zeleo bih u novoj godini da zadrzim mog Medu puu uz sebe i da krenemo da zivimo zajedno i ako nam finansije budu dozvolile da putujemo sto vise budemo mogli. Tvoj Gušter.";
 
     inputs.forEach((input, index) => {
         input.addEventListener('input', () => {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     inputPoruka.addEventListener('input', (e) => {
         const value = e.target.value;
-        flipCardBackContent.textContent = "Zelim da u novoj godini budemo bolji nego u prethodnoj! " + value;
+        flipCardBackContent.textContent = "Ono sto sam pozeleo u prosloj novoj godini to mi se ostvarilo.Našao sam nekog do koga mi je previse stalo, nekog koga sam mnogo zavoleo, osobu koja zeli da provodi svaki moguci trenutak u mom zivotu i da delimo sve nase uspehe i padove, srecu i tugu. Zeleo bih u novoj godini da zadrzim mog Medu puu uz sebe i da krenemo da zivimo zajedno i ako nam finansije budu dozvolile da putujemo sto vise budemo mogli. Tvoj Gušter. " + value;
         flipCardBackContent.style.whiteSpace = 'pre-wrap'; // Ensure text wraps within the flip card
         adjustCardHeight();
         adjustInputHeight();
