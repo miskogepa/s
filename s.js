@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     submitButton.addEventListener('click', () => {
-        document.querySelector('body').innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh;"><img src="p.jpg" alt="Image" style="max-width: 100%; max-height: 100%;"></div>';
+        document.querySelector('body').innerHTML = '<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;"><p style="color:green; font-size:12px; margin-bottom: 20px;">Deda Mraz je procitao vase pismo i spremio je neka pitanja.</p><img src="p.jpg" alt="Image" style="max-width: 100%; max-height: 100%;"></div>';// tekst za deda mraza
     });
 
     function adjustCardHeight() {
