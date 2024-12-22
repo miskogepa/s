@@ -82,11 +82,17 @@
             text-align: center;
             margin-bottom: 5px;
         }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #1BFD9C;
+        }
     </style>
 </head>
 <body>
     <div id="quiz-container"></div>
     <button id="finish-test">Završi Test</button>
+    <p id="result"></p>
     <script>
         const questions = [
             { question: "Kako se zove mesto na kom smo se prvi put poljubili?", correctAnswer: "Avala", options: ["Avala", "Sava mala", "Limeni", "Bioskop"] },
@@ -135,7 +141,7 @@
                     score++;
                 }
             });
-            alert(`Imate ${score} tačnih odgovora.`);
+            document.getElementById('result').textContent = `Imate ${score} tačnih odgovora.`;
         }
 
         document.getElementById('finish-test').addEventListener('click', finishTest);
