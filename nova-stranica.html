@@ -86,6 +86,7 @@
 </head>
 <body>
     <div id="quiz-container"></div>
+    <button id="finish-test">Završi Test</button>
     <script>
         const questions = [
             { question: "Kako se zove mesto na kom smo se prvi put poljubili?", correctAnswer: "Avala", options: ["Avala", "Sava mala", "Limeni", "Bioskop"] },
@@ -125,6 +126,19 @@
                 });
             });
         }
+
+        function finishTest() {
+            const correctAnswers = document.querySelectorAll('.quiz-option.correct');
+            let score = 0;
+            correctAnswers.forEach(option => {
+                if (option.classList.contains('correct')) {
+                    score++;
+                }
+            });
+            alert(`Imate ${score} tačnih odgovora.`);
+        }
+
+        document.getElementById('finish-test').addEventListener('click', finishTest);
 
         loadQuiz();
     </script>
